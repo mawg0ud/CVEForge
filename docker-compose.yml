@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: cve_app
+    ports:
+      - "5000:5000"
+    environment:
+      - NVD_API_URL=${NVD_API_URL}
+      - RESULTS_PER_PAGE=${RESULTS_PER_PAGE}
+      - DATE_FORMAT=${DATE_FORMAT}
+      - RAW_DATA_DIR=${RAW_DATA_DIR}
+      - PROCESSED_DATA_DIR=${PROCESSED_DATA_DIR}
+      - SIGNIFICANT_CVE_FILE=${SIGNIFICANT_CVE_FILE}
+      - USER_DB=postgres://user:password@db:5432/user_db
+      - SMTP_SERVER=${SMTP_SERVER}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USERNAME=${SMTP_USERNAME}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - EMAIL_SENDER=${EMAIL_SENDER}
+      - LOG_FILE=${LOG_FILE}
+      - LOG_LEVEL=${LOG_LEVEL}
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - logs:/app/backend/logs
+      - data:/app/backend/data
+    command: python app.py
+
+  db:
+    image: postgres:13
+    container_name: cve_db
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=user_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+  logs:
+  data:
