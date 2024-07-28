@@ -1,4 +1,4 @@
-# CVE Database and Analysis
+# CVEForge
 
 This repository tracks the latest Common Vulnerabilities and Exposures (CVE). It includes:
 - A script to scrape CVE databases for the latest vulnerabilities.
