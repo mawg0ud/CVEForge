@@ -24,7 +24,7 @@ This repository tracks the latest Common Vulnerabilities and Exposures (CVE). It
 1. **Clone the Repository**:
     ```bash
     git clone https://github.com/mawg0ud/CVEForge.git
-    cd cve-database-analysis
+    cd CVEForge
     ```
 
 2. **Create a Virtual Environment**:
