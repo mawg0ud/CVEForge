@@ -1,7 +1,3 @@
-
-### ANALYSIS.md
-
-```markdown
 # CVE Analysis
 
 This document outlines the process of analyzing Common Vulnerabilities and Exposures (CVEs) to determine their significance, the criteria used for this analysis, and examples of how the analysis is performed.
@@ -59,7 +55,6 @@ The significant CVEs are saved in a JSON file in the `backend/data/processed` di
 
 Here are some examples of significant CVEs identified through the analysis process:
 
-
 ```json
 {
   "id": "CVE-2023-12345",
@@ -75,10 +70,10 @@ Here are some examples of significant CVEs identified through the analysis proce
 ```
 
 
+
 ## Conclusion
 
 The analysis process is designed to identify significant CVEs based on their CVSS scores, impact metrics, and exploitability. By focusing on these criteria, the system can prioritize the most critical vulnerabilities, helping users to mitigate risks effectively.
-```
 
 ### Explanation
 
@@ -86,3 +81,4 @@ The analysis process is designed to identify significant CVEs based on their CVS
 2. **Criteria for Determining Significance**: Details the criteria used to determine whether a CVE is significant, such as CVSS scores and impact metrics.
 3. **Analyzing CVE Data**: Breaks down the steps involved in analyzing the CVE data.
 4. **Examples of Analysis Results**: Provides JSON examples of significant CVEs to illustrate what the output of the analysis might look like.
+
